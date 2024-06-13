@@ -2,124 +2,70 @@ document.addEventListener("DOMContentLoaded", function() {
     let score = 0;
     let increment = 1;
     const scoreDisplay = document.getElementById("score");
-    const cookie = document.getElementById("cookie");
-    const upgrade1 = document.getElementById("upgrade1");
-    const upgrade2 = document.getElementById("upgrade2");
-    const upgrade3 = document.getElementById("upgrade3");
-    const upgrade4 = document.getElementById("upgrade4");
-    const upgrade5 = document.getElementById("upgrade5");
-    const upgrade6 = document.getElementById("upgrade6");
-    const upgrade7 = document.getElementById("upgrade7");
-    const cost1 = document.getElementById("cost1");
-    const cost2 = document.getElementById("cost2");
-    const cost3 = document.getElementById("cost3");
-    const cost4 = document.getElementById("cost4");
-    const cost5 = document.getElementById("cost5");
-    const cost6 = document.getElementById("cost6");
-    const cost7 = document.getElementById("cost7");
-    
-    
+    const block = document.getElementById("block");
+    const upgrades = [
+        { id: "upgrade1", cost: 10, increase: 1 },
+        { id: "upgrade2", cost: 50, increase: 5 },
+        { id: "upgrade3", cost: 100, increase: 10 },
+        { id: "upgrade4", cost: 500, increase: 50 },
+        { id: "upgrade5", cost: 1000, increase: 100 },
+        { id: "upgrade6", cost: 5000, increase: 500 },
+        { id: "upgrade7", cost: 10000, increase: 1000 },
+        { id: "upgrade8", cost: 50000, increase: 5000 },
+    ];
+    const autoClicker = document.getElementById("auto-clicker");
+    const autoCost = document.getElementById("autoCost");
+    let costAutoClicker = 100;
+    let autoClickerActive = false;
 
-    let costUpgrade1 = 10;
-    let costUpgrade2 = 50;
-    let costUpgrade3 = 100;
-    let costUpgrade4 = 150;
-    let costUpgrade5 = 200;
-    let costUpgrade6 = 500;
-    let costUpgrade7 = 1000;
-    
-
-    cookie.addEventListener("click", function() {
+    block.addEventListener("click", function() {
         score += increment;
         scoreDisplay.textContent = score;
         checkUpgrades();
     });
 
-    upgrade1.addEventListener("click", function() {
-        if (score >= costUpgrade1) {
-            score -= costUpgrade1;
-            increment += 1;
-            costUpgrade1 *= 2;
-            cost1.textContent = costUpgrade1;
+    upgrades.forEach(upgrade => {
+        const button = document.getElementById(upgrade.id);
+        const costDisplay = document.getElementById(`cost${upgrade.id.replace('upgrade', '')}`);
+
+        button.addEventListener("click", function() {
+            if (score >= upgrade.cost) {
+                score -= upgrade.cost;
+                increment += upgrade.increase;
+                upgrade.cost *= 2;
+                costDisplay.textContent = upgrade.cost;
+                scoreDisplay.textContent = score;
+                checkUpgrades();
+            }
+        });
+    });
+
+    autoClicker.addEventListener("click", function() {
+        if (score >= costAutoClicker && !autoClickerActive) {
+            score -= costAutoClicker;
+            costAutoClicker *= 2;
+            autoCost.textContent = costAutoClicker;
             scoreDisplay.textContent = score;
+            autoClickerActive = true;
+            startAutoClicker();
             checkUpgrades();
         }
     });
 
-    upgrade2.addEventListener("click", function() {
-        if (score >= costUpgrade2) {
-            score -= costUpgrade2;
-            increment += 5;
-            costUpgrade2 *= 2;
-            cost2.textContent = costUpgrade2;
+    function startAutoClicker() {
+        setInterval(function() {
+            score += 1;
             scoreDisplay.textContent = score;
             checkUpgrades();
-        }
-    });
+        }, 1000);
+    }
 
-    upgrade3.addEventListener("click", function() {
-        if (score >= costUpgrade3) {
-            score -= costUpgrade3;
-            increment += 10;
-            costUpgrade3 *= 2;
-            cost3.textContent = costUpgrade3;
-            scoreDisplay.textContent = score;
-            checkUpgrades();
-        }
-    });
-    
-    upgrade4.addEventListener("click", function() {
-        if (score >= costUpgrade4) {
-            score -= costUpgrade4;
-            increment += 150;
-            costUpgrade4 *= 2;
-            cost4.textContent = costUpgrade4;
-            scoreDisplay.textContent = score;
-            checkUpgrades();
-        }
-    });
-    
-    upgrade5.addEventListener("click", function() {
-        if (score >= costUpgrade5) {
-            score -= costUpgrade5;
-            increment += 200;
-            costUpgrade5 *= 2;
-            cost5.textContent = costUpgrade5;
-            scoreDisplay.textContent = score;
-            checkUpgrades();
-        }
-    });
-    
-    upgrade6.addEventListener("click", function() {
-        if (score >= costUpgrade6) {
-            score -= costUpgrade6;
-            increment += 500;
-            costUpgrade6 *= 2;
-            cost6.textContent = costUpgrade6;
-            scoreDisplay.textContent = score;
-            checkUpgrades();
-        }
-    });
-    
-    upgrade7.addEventListener("click", function() {
-        if (score >= costUpgrade7) {
-            score -= costUpgrade7;
-            increment += 1000;
-            costUpgrade7 *= 2;
-            cost7.textContent = costUpgrade7;
-            scoreDisplay.textContent = score;
-            checkUpgrades();
-        }
-    });
-    
     function checkUpgrades() {
-        upgrade1.disabled = score < costUpgrade1;
-        upgrade2.disabled = score < costUpgrade2;
-        upgrade3.disabled = score < costUpgrade3;
-        upgrade4.disabled = score < costUpgrade4;
-        upgrade5.disabled = score < costUpgrade5;
-        upgrade6.disabled = score < costUpgrade6;
-        upgrade7.disabled = score < costUpgrade7;
+        upgrades.forEach(upgrade => {
+            const button = document.getElementById(upgrade.id);
+            button.disabled = score < upgrade.cost;
+        });
+        autoClicker.disabled = score < costAutoClicker || autoClickerActive;
     }
 
     checkUpgrades();
