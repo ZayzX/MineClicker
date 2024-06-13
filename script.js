@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "auto-clicker4", cost: 5000, increase: 50 },
         { id: "auto-clicker5", cost: 10000, increase: 100 },
         { id: "auto-clicker6", cost: 50000, increase: 500 },
+        { id: "auto-clicker7", cost: 100000, increase: 1000 },
+        { id: "auto-clicker8", cost: 250000, increase: 5000 },
+        { id: "auto-clicker9", cost: 500000, increase: 10000 },
+        { id: "auto-clicker10", cost: 1000000, increase: 50000},
+        
     ];
     let autoClickerActive = [false, false, false, false, false, false];
 
