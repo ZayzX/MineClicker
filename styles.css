@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #4D5656;
 }
 
 .game-container {
@@ -28,14 +28,14 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: #1D8348;
     color: white;
     display: block;
     margin: 10px auto;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #28B463;
 }
 
 button:disabled {
