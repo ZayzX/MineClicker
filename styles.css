@@ -16,7 +16,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#cookie {
+#block {
     width: 200px;
     cursor: pointer;
 }
@@ -30,6 +30,8 @@ button {
     border-radius: 5px;
     background-color: #007BFF;
     color: white;
+    display: block;
+    margin: 10px auto;
 }
 
 button:hover {
