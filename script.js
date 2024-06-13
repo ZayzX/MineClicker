@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "upgrade6", cost: 5000, increase: 500 },
         { id: "upgrade7", cost: 10000, increase: 1000 },
         { id: "upgrade8", cost: 50000, increase: 5000 },
+        { id: "upgrade9", cost: 75000, increase: 10000 },
+        { id: "upgrade10", cost: 100000, increase: 50000 },
+        { id: "upgrade11", cost: 500000, increase: 100000 },
+        { id: "upgrade12", cost: 2500000, increase: 500000 },
+        { id: "upgrade13", cost: 5000000, increase: 1000000 },
+        { id: "upgrade14", cost: 50000000, increase: 10000000 },
+        { id: "upgrade15", cost: 500000000, increase: 100000000 },
     ];
     const autoClickers = [
         { id: "auto-clicker1", cost: 100, increase: 1 },
@@ -26,6 +33,12 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "auto-clicker8", cost: 250000, increase: 5000 },
         { id: "auto-clicker9", cost: 500000, increase: 10000 },
         { id: "auto-clicker10", cost: 1000000, increase: 50000},
+        { id: "auto-clicker11", cost: 2500000, increase: 1000000},
+        { id: "auto-clicker12", cost: 5000000, increase: 10000000},
+        { id: "auto-clicker13", cost: 50000000, increase: 100000000},
+        { id: "auto-clicker14", cost: 750000000, increase: 1000000000},
+        { id: "auto-clicker15", cost: 5000000000, increase: 10000000000},
+        
         
     ];
     let autoClickerActive = [false, false, false, false, false, false];
