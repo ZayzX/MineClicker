@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #4D5656;
+    background-color: #2E2E2E;
 }
 
 .game-container {
@@ -41,4 +41,16 @@ button:hover {
 button:disabled {
     background-color: grey;
     cursor: not-allowed;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+h2 {
+    color: white;
 }
