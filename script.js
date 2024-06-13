@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     let score = 0;
+    let totalScore = 0;
     let increment = 1;
     const scoreDisplay = document.getElementById("score");
+    const totalScoreDisplay = document.getElementById("totalScore");
     const block = document.getElementById("block");
     const upgrades = [
         { id: "upgrade1", cost: 10, increase: 1 },
@@ -13,14 +15,21 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "upgrade7", cost: 10000, increase: 1000 },
         { id: "upgrade8", cost: 50000, increase: 5000 },
     ];
-    const autoClicker = document.getElementById("auto-clicker");
-    const autoCost = document.getElementById("autoCost");
-    let costAutoClicker = 100;
-    let autoClickerActive = false;
+    const autoClickers = [
+        { id: "auto-clicker1", cost: 100, increase: 1 },
+        { id: "auto-clicker2", cost: 500, increase: 5 },
+        { id: "auto-clicker3", cost: 1000, increase: 10 },
+        { id: "auto-clicker4", cost: 5000, increase: 50 },
+        { id: "auto-clicker5", cost: 10000, increase: 100 },
+        { id: "auto-clicker6", cost: 50000, increase: 500 },
+    ];
+    let autoClickerActive = [false, false, false, false, false, false];
 
     block.addEventListener("click", function() {
         score += increment;
+        totalScore += increment;
         scoreDisplay.textContent = score;
+        totalScoreDisplay.textContent = totalScore;
         checkUpgrades();
     });
 
@@ -40,22 +49,29 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    autoClicker.addEventListener("click", function() {
-        if (score >= costAutoClicker && !autoClickerActive) {
-            score -= costAutoClicker;
-            costAutoClicker *= 2;
-            autoCost.textContent = costAutoClicker;
-            scoreDisplay.textContent = score;
-            autoClickerActive = true;
-            startAutoClicker();
-            checkUpgrades();
-        }
+    autoClickers.forEach((autoClicker, index) => {
+        const button = document.getElementById(autoClicker.id);
+        const costDisplay = document.getElementById(`autoCost${index + 1}`);
+
+        button.addEventListener("click", function() {
+            if (score >= autoClicker.cost && !autoClickerActive[index]) {
+                score -= autoClicker.cost;
+                autoClicker.cost *= 2;
+                costDisplay.textContent = autoClicker.cost;
+                scoreDisplay.textContent = score;
+                autoClickerActive[index] = true;
+                startAutoClicker(autoClicker.increase);
+                checkUpgrades();
+            }
+        });
     });
 
-    function startAutoClicker() {
+    function startAutoClicker(increase) {
         setInterval(function() {
-            score += 1;
+            score += increase;
+            totalScore += increase;
             scoreDisplay.textContent = score;
+            totalScoreDisplay.textContent = totalScore;
             checkUpgrades();
         }, 1000);
     }
@@ -65,7 +81,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const button = document.getElementById(upgrade.id);
             button.disabled = score < upgrade.cost;
         });
-        autoClicker.disabled = score < costAutoClicker || autoClickerActive;
+        autoClickers.forEach((autoClicker, index) => {
+            const button = document.getElementById(autoClicker.id);
+            button.disabled = score < autoClicker.cost || autoClickerActive[index];
+        });
     }
 
     checkUpgrades();
