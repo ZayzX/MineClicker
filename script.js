@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
         { id: "upgrade13", cost: 5000000, increase: 1000000 },
         { id: "upgrade14", cost: 50000000, increase: 10000000 },
         { id: "upgrade15", cost: 500000000, increase: 100000000 },
+        { id: "upgrade16", cost: 500000000, increase: 100000000 },
+        { id: "upgrade17", cost: 500000000, increase: 100000000 },
+        { id: "upgrade18", cost: 500000000, increase: 100000000 },
+        { id: "upgrade19", cost: 500000000, increase: 100000000 },
+        { id: "upgrade20", cost: 500000000, increase: 100000000 },
     ];
     const autoClickers = [
         { id: "auto-clicker1", cost: 100, increase: 1 },
