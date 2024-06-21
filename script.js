@@ -163,7 +163,7 @@ function detectWords() {
 
     if (text.includes('leo')) {
         alert('Quelle charo');
-        result.textContent = 'Quelle charo';
+        result.textContent = 'Audrey mmmhhhhh';
         result.style.color = 'green';
     } else if (text.includes('kevyn')) {
         alert('Quelle fumeur');
