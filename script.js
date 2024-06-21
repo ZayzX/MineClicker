@@ -156,3 +156,21 @@ search.onkeyup = function(e){
     alert(e.keyCode);
     alert('bonjour');
 };
+
+function detectWords() {
+    const text = document.getElementById('inputText').value.toLowerCase();
+    const result = document.getElementById('result');
+
+    if (text.includes('leo')) {
+        alert('Quelle charo');
+        result.textContent = 'Quelle charo';
+        result.style.color = 'green';
+    } else if (text.includes('kevyn')) {
+        alert('Quelle fumeur');
+        result.textContent = 'Quelle fumeur';
+        result.style.color = 'green';
+    } else {
+        result.textContent = 'No special words detected.';
+        result.style.color = 'red';
+    }
+}
