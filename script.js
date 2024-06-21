@@ -131,21 +131,21 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-let compteur = 0;
+let score = 0;
 
         function augmenter() {
-            compteur += 10000;
+            score += 10000;
             afficherScore();
         }
 
         function afficherScore() {
-            let affichage = compteur;
-            if (compteur >= 1000000000) {
-                affichage = (compteur / 1000000000).toFixed(1) + 'Md';
-            } else if (compteur >= 1000000) {
-                affichage = (compteur / 1000000).toFixed(1) + 'M';
-            } else if (compteur >= 10000) {
-                affichage = (compteur / 1000).toFixed(1) + 'K';
+            let affichage = score;
+            if (score >= 1000000000) {
+                affichage = (score / 1000000000).toFixed(1) + 'Md';
+            } else if (score >= 1000000) {
+                affichage = (score / 1000000).toFixed(1) + 'M';
+            } else if (score >= 10000) {
+                affichage = (score / 1000).toFixed(1) + 'K';
             }
             document.getElementById('score').innerText = affichage;
         }
