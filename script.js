@@ -149,3 +149,9 @@ let score = 0;
             }
             document.getElementById('score').innerText = affichage;
         }
+
+search.addEventListener("kevyn",function(e){
+    alert(search.value);
+    alert(e.keyCode);
+    alert('quelle fumeur de merde');
+},false);
