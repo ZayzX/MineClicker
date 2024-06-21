@@ -130,3 +130,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 modal.style.display = "none";
             }
         }
+
+let compteur = 0;
+
+        function augmenter() {
+            compteur += 10000;
+            afficherScore();
+        }
+
+        function afficherScore() {
+            let affichage = compteur;
+            if (compteur >= 1000000000) {
+                affichage = (compteur / 1000000000).toFixed(1) + 'Md';
+            } else if (compteur >= 1000000) {
+                affichage = (compteur / 1000000).toFixed(1) + 'M';
+            } else if (compteur >= 10000) {
+                affichage = (compteur / 1000).toFixed(1) + 'K';
+            }
+            document.getElementById('score').innerText = affichage;
+        }
