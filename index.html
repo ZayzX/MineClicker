@@ -73,41 +73,43 @@
         <img src="bloc.jpg" alt="Bloc" id="block">
         <h2>Améliorations</h2>
         <div id="upgrades">
-            <button id="upgrade1">Amélioration 1 (+1 par clic) - Coût : <span id="cost1">10</span></button>
-            <button id="upgrade2">Amélioration 2 (+5 par clic) - Coût : <span id="cost2">50</span></button>
-            <button id="upgrade3">Amélioration 3 (+10 par clic) - Coût : <span id="cost3">100</span></button>
-            <button id="upgrade4">Amélioration 4 (+50 par clic) - Coût : <span id="cost4">500</span></button>
-            <button id="upgrade5">Amélioration 5 (+100 par clic) - Coût : <span id="cost5">1000</span></button>
-            <button id="upgrade6">Amélioration 6 (+500 par clic) - Coût : <span id="cost6">5000</span></button>
-            <button id="upgrade7">Amélioration 7 (+1000 par clic) - Coût : <span id="cost7">10K</span></button>
-            <button id="upgrade8">Amélioration 8 (+5000 par clic) - Coût : <span id="cost8">50K</span></button>
-            <button id="upgrade9">Amélioration 9 (+10K par clic) - Coût : <span id="cost9">75K</span></button>
-            <button id="upgrade10">Amélioration 10 (+50K par clic) - Coût : <span id="cost10">100K</span></button>
-            <button id="upgrade11">Amélioration 11 (+100K par clic) - Coût : <span id="cost11">500K</span></button>
-            <button id="upgrade12">Amélioration 12 (+500K par clic) - Coût : <span id="cost12">2,5M</span></button>
-            <button id="upgrade13">Amélioration 13 (+1M par clic) - Coût : <span id="cost13">5M</span></button>
-            <button id="upgrade14">Amélioration 14 (+10M par clic) - Coût : <span id="cost14">50M</span></button>
-            <button id="upgrade15">Amélioration 15 (+100M par clic) - Coût : <span id="cost15">500M</span></button>
-            <button id="upgrade16">Amélioration 16 (+150M par clic) - Coût : <span id="cost16">1Md</span></button>
-            <button id="upgrade17">Amélioration 17 (+200M par clic) - Coût : <span id="cost17">5Md</span></button>
-            <button id="upgrade18">Amélioration 18 (+250M par clic) - Coût : <span id="cost18">10Md</span></button>
-            <button id="upgrade19">Amélioration 19 (+500M par clic) - Coût : <span id="cost19">50Md</span></button>
-            <button id="upgrade20">Amélioration 20 (+1Md par clic) - Coût : <span id="cost20">100Md</span></button>
-            <button id="auto-clicker1">Auto-Clicker 1 (+1/s) - Coût : <span id="autoCost1">100</span></button>
-            <button id="auto-clicker2">Auto-Clicker 2 (+5/s) - Coût : <span id="autoCost2">500</span></button>
-            <button id="auto-clicker3">Auto-Clicker 3 (+10/s) - Coût : <span id="autoCost3">1000</span></button>
-            <button id="auto-clicker4">Auto-Clicker 4 (+50/s) - Coût : <span id="autoCost4">5000</span></button>
-            <button id="auto-clicker5">Auto-Clicker 5 (+100/s) - Coût : <span id="autoCost5">10K</span></button>
-            <button id="auto-clicker6">Auto-Clicker 6 (+500/s) - Coût : <span id="autoCost6">50K</span></button>
-            <button id="auto-clicker7">Auto-Clicker 7 (+1K/s) - Coût : <span id="autoCost7">100K</span></button>
-            <button id="auto-clicker8">Auto-Clicker 8 (+5K/s) - Coût : <span id="autoCost8">200K</span></button>
-            <button id="auto-clicker9">Auto-Clicker 9 (+10K/s) - Coût : <span id="autoCost9">500K</span></button>
-            <button id="auto-clicker10">Auto-Clicker 10 (+50K/s) - Coût : <span id="autoCost10">1M</span></button>
-            <button id="auto-clicker11">Auto-Clicker 11 (+1M/s) - Coût : <span id="autoCost11">2,5M</span></button>
-            <button id="auto-clicker12">Auto-Clicker 12 (+10M/s) - Coût : <span id="autoCost12">5M</span></button>
-            <button id="auto-clicker13">Auto-Clicker 13 (+100M/s) - Coût : <span id="autoCost13">50M</span></button>
-            <button id="auto-clicker14">Auto-Clicker 14 (+1Md/s) - Coût : <span id="autoCost14">750M</span></button>
-            <button id="auto-clicker15">Auto-Clicker 15 (+10Md/s) - Coût : <span id="autoCost15">5Md</span></button>
+            <h2>Améliorations</h2>
+            <button onClick="augmenter()" id="upgrade1">Amélioration 1 (+1 par clic) - Coût : <span id="cost1">10</span></button>
+            <button onClick="augmenter()" id="upgrade2">Amélioration 2 (+5 par clic) - Coût : <span id="cost2">50</span></button>
+            <button onClick="augmenter()" id="upgrade3">Amélioration 3 (+10 par clic) - Coût : <span id="cost3">100</span></button>
+            <button onClick="augmenter()" id="upgrade4">Amélioration 4 (+50 par clic) - Coût : <span id="cost4">500</span></button>
+            <button onClick="augmenter()" id="upgrade5">Amélioration 5 (+100 par clic) - Coût : <span id="cost5">1000</span></button>
+            <button onClick="augmenter()" id="upgrade6">Amélioration 6 (+500 par clic) - Coût : <span id="cost6">5000</span></button>
+            <button onClick="augmenter()" id="upgrade7">Amélioration 7 (+1000 par clic) - Coût : <span id="cost7">10K</span></button>
+            <button onClick="augmenter()" id="upgrade8">Amélioration 8 (+5000 par clic) - Coût : <span id="cost8">50K</span></button>
+            <button onClick="augmenter()" id="upgrade9">Amélioration 9 (+10K par clic) - Coût : <span id="cost9">75K</span></button>
+            <button onClick="augmenter()" id="upgrade10">Amélioration 10 (+50K par clic) - Coût : <span id="cost10">100K</span></button>
+            <button onClick="augmenter()" id="upgrade11">Amélioration 11 (+100K par clic) - Coût : <span id="cost11">500K</span></button>
+            <button onClick="augmenter()" id="upgrade12">Amélioration 12 (+500K par clic) - Coût : <span id="cost12">2,5M</span></button>
+            <button onClick="augmenter()" id="upgrade13">Amélioration 13 (+1M par clic) - Coût : <span id="cost13">5M</span></button>
+            <button onClick="augmenter()" id="upgrade14">Amélioration 14 (+10M par clic) - Coût : <span id="cost14">50M</span></button>
+            <button onClick="augmenter()" id="upgrade15">Amélioration 15 (+100M par clic) - Coût : <span id="cost15">500M</span></button>
+            <button onClick="augmenter()" id="upgrade16">Amélioration 16 (+150M par clic) - Coût : <span id="cost16">1Md</span></button>
+            <button onClick="augmenter()" id="upgrade17">Amélioration 17 (+200M par clic) - Coût : <span id="cost17">5Md</span></button>
+            <button onClick="augmenter()" id="upgrade18">Amélioration 18 (+250M par clic) - Coût : <span id="cost18">10Md</span></button>
+            <button onClick="augmenter()" id="upgrade19">Amélioration 19 (+500M par clic) - Coût : <span id="cost19">50Md</span></button>
+            <button onClick="augmenter()" id="upgrade20">Amélioration 20 (+1Md par clic) - Coût : <span id="cost20">100Md</span></button>
+            <h2>Auto-clicker</h2>
+            <button onClick="augmenter()" id="auto-clicker1">Auto-Clicker 1 (+1/s) - Coût : <span id="autoCost1">100</span></button>
+            <button onClick="augmenter()" id="auto-clicker2">Auto-Clicker 2 (+5/s) - Coût : <span id="autoCost2">500</span></button>
+            <button onClick="augmenter()" id="auto-clicker3">Auto-Clicker 3 (+10/s) - Coût : <span id="autoCost3">1000</span></button>
+            <button onClick="augmenter()" id="auto-clicker4">Auto-Clicker 4 (+50/s) - Coût : <span id="autoCost4">5000</span></button>
+            <button onClick="augmenter()" id="auto-clicker5">Auto-Clicker 5 (+100/s) - Coût : <span id="autoCost5">10K</span></button>
+            <button onClick="augmenter()" id="auto-clicker6">Auto-Clicker 6 (+500/s) - Coût : <span id="autoCost6">50K</span></button>
+            <button onClick="augmenter()" id="auto-clicker7">Auto-Clicker 7 (+1K/s) - Coût : <span id="autoCost7">100K</span></button>
+            <button onClick="augmenter()" id="auto-clicker8">Auto-Clicker 8 (+5K/s) - Coût : <span id="autoCost8">200K</span></button>
+            <button onClick="augmenter()" id="auto-clicker9">Auto-Clicker 9 (+10K/s) - Coût : <span id="autoCost9">500K</span></button>
+            <button onClick="augmenter()" id="auto-clicker10">Auto-Clicker 10 (+50K/s) - Coût : <span id="autoCost10">1M</span></button>
+            <button onClick="augmenter()" id="auto-clicker11">Auto-Clicker 11 (+1M/s) - Coût : <span id="autoCost11">2,5M</span></button>
+            <button onClick="augmenter()" id="auto-clicker12">Auto-Clicker 12 (+10M/s) - Coût : <span id="autoCost12">5M</span></button>
+            <button onClick="augmenter()" id="auto-clicker13">Auto-Clicker 13 (+100M/s) - Coût : <span id="autoCost13">50M</span></button>
+            <button onClick="augmenter()" id="auto-clicker14">Auto-Clicker 14 (+1Md/s) - Coût : <span id="autoCost14">750M</span></button>
+            <button onClick="augmenter()" id="auto-clicker15">Auto-Clicker 15 (+10Md/s) - Coût : <span id="autoCost15">5Md</span></button>
             
         </div>
     </div>
